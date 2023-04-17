@@ -1,0 +1,32 @@
+@media (min-width: 64em) {
+  // 1024(desktop) / 16rem
+  // styles go here
+}
+
+$breakpoints-up: (
+  "medium": "40em",
+  "large": "64em",
+  "xlarge": "87.5em",
+);
+// medium 640 / 16rem = 40em
+// large 1024 / 16rem = 64em
+// xlarge 1400 / 16rem = 87.5em
+
+$breakpoints-down: (
+  "small": "39.9375em",
+  "medium": "63.9375em",
+  "large": "87.4375em",
+);
+// 639px, 1023px, 1399px just 1 pixel down for not overlapping
+
+@mixin breakpoint-up($size) {
+  @media (min-width: map-get($breakpoints-up, $size)) {
+    @content;
+  }
+}
+
+@mixin breakpoint-down($size) {
+  @media (max-width: map-get($breakpoints-down, $size)) {
+    @content;
+  }
+}

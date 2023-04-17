@@ -1,0 +1,110 @@
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Montserrat", sans-serif;
+  // font-family: "Fraunces", serif;
+  width: 100%;
+  min-height: 100vh;
+  background-color: $cream;
+  display: grid;
+  place-items: center;
+}
+.container {
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  background: $white;
+  border-radius: 10px;
+  overflow: hidden;
+}
+.container {
+  @include breakpoint-down(medium) {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: 10px;
+  }
+}
+.container .image {
+  background-image: url("/images/image-product-desktop.jpg");
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background-position: center;
+  background-size: cover;
+}
+.container .image {
+  @include breakpoint-down(medium) {
+    background-image: url("/images/image-product-mobile.jpg");
+    width: 100%;
+    min-height: 500px;
+    object-fit: cover;
+    background-position: center;
+    background-size: cover;
+  }
+}
+
+.container .description {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+
+  padding: 50px;
+}
+.description h2 {
+  color: $darkGrayishBlue;
+  letter-spacing: 6px;
+  font-size: 16px;
+  margin-bottom: 30px;
+}
+
+.description h1 {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: $veryDarkBlue;
+  font-size: 40px;
+  line-height: 1;
+  margin-bottom: 35px;
+}
+
+.description .text {
+  color: $darkGrayishBlue;
+  font-size: 18px;
+  line-height: 1.8;
+  margin-bottom: 40px;
+}
+.description .price {
+  font-family: "Fraunces", serif;
+  font-weight: 700;
+  color: $darkCyan;
+  font-size: 40px;
+  margin-bottom: 35px;
+}
+.description .price span {
+  font-family: "Montserrat", sans-serif;
+  color: $darkGrayishBlue;
+  font-weight: 300;
+  font-size: 16px;
+  text-decoration: line-through;
+  display: inline-block;
+  vertical-align: middle;
+  margin-left: 26px;
+}
+.addToCart {
+  width: 100%;
+  background: $darkCyan;
+  color: $white;
+  font-size: 18px;
+  padding: 18px 0;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+}
+.addToCart svg {
+  margin-right: 15px;
+}
